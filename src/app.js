@@ -66,3 +66,5 @@ document.addEventListener('keypress', async (e) => {
       Promise.resolve( img.src = response.data.images.original.url);
     })
     .catch((error) => { console.error('woops something couldnt be fetched', error) } )}
+
+    getImage('forecast');
