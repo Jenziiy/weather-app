@@ -1,4 +1,3 @@
-let city = 'London';
 let unit = 'C';
 
 const getWeather = async function (){
