@@ -1,4 +1,5 @@
 let city = 'London';
+let unit = 'C';
 
 const getWeather = async function (){
   try {
@@ -12,14 +13,24 @@ const getWeather = async function (){
 
 async function setWeather(weather){
   let paragraph = document.querySelector('p');
-  paragraph.textContent = weather.current.temp_c;
+  unit === 'C' ? paragraph.textContent =  ` ${weather.current.temp_c} celsius`: paragraph.textContent = `${weather.current.temp_f} fahrenheit`;
 }
 
 async function getUserInput(){
-  return document.querySelector('input').value;
+  return document.querySelector('#search-location').value;
 }
 
 // listen for enter to search 
 document.addEventListener('keypress', async (e) => { 
   if (e.key === 'Enter'){ setWeather(await getWeather()) };
  });
+
+ function toggleUnit(){
+   let toggle = document.querySelector('.slider');
+   toggle.getAttribute('data-content');
+   toggle.getAttribute('data-content') === 'C' ? toggle.setAttribute('data-content', 'F' ) : toggle.setAttribute('data-content', 'C' );
+   unit = toggle.getAttribute('data-content');
+ }
+
+ const toggle = document.querySelector('.slider');
+ toggle.addEventListener('click', async () => { toggleUnit(); setWeather(await getWeather())} );
