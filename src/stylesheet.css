@@ -1,0 +1,41 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: grid;
+  grid-template-areas: 
+  "header header header"
+  "nav main rightsite"
+  "footer footer footer";
+  grid-template-rows: 2fr 7fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: 10px;
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(rgb(81, 179, 81) ,rgb(36, 116, 165),white);
+  }
+
+header, footer, main, nav, div {
+  padding: 10px;
+}
+
+#pageHeader {
+  grid-area: header;
+}
+h1{
+text-align: center;
+color: blue;
+}
+#pageFooter {
+  grid-area: footer;
+}
+#app { 
+  grid-area: main;    
+  display: grid;  
+  }
+#mainNav { 
+  grid-area: nav; 
+  }
+#rightSite { 
+  grid-area: rightsite; 
+  }
+
+
